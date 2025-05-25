@@ -1,161 +1,164 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>중간계 AI 스튜디오 제품</title>
-    <!-- 넥슨 폰트 웹폰트 적용 (Google Fonts CDN) -->
-    <link href="https://fonts.googleapis.com/css2?family=NEXON+Lv1+Gothic+OTF:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* 전체 컨테이너 스타일 - 화면 크기에 따라 반응형으로 바뀝니다 */
+<!DOCTYPE html> <!-- (초등학생: 이 문서는 웹페이지의 시작을 알리는 표시예요) -->
+<html lang="ko"> <!-- (초등학생: 이 웹페이지는 한국어로 되어 있어요) -->
+<head> <!-- (초등학생: 여기부터 머리 부분이에요. 웹페이지의 정보와 스타일을 정해요) -->
+    <meta charset="UTF-8"> <!-- (초등학생: 한글이 깨지지 않게 해줘요) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- (초등학생: 핸드폰, 컴퓨터에서 모두 잘 보이게 해줘요) -->
+    <title>중간계 AI 스튜디오 제품</title> <!-- (초등학생: 웹페이지 제목이에요. 탭에 보여요) -->
+    <!-- 넥슨 폰트 웹폰트 적용 (Google Fonts CDN) (초등학생: 글씨체를 예쁘게 바꿔줘요) -->
+    <link href="https://fonts.googleapis.com/css2?family=NEXON+Lv1+Gothic+OTF:wght@400;700&display=swap" rel="stylesheet"> <!-- (초등학생: 넥슨 폰트를 불러와요) -->
+    <style> /* (초등학생: 여기서부터 디자인을 정해요) */
+        /* 전체 컨테이너 스타일 - 화면 크기에 따라 반응형으로 바뀝니다 (초등학생: 이 부분이 화면 전체를 감싸요) */
         body {
-            font-family: 'NEXON Lv1 Gothic OTF', sans-serif; /* 넥슨 폰트 적용 */
-            margin: 0;
-            padding: 0;
-            background: #f8f9fa;
+            font-family: 'NEXON Lv1 Gothic OTF', sans-serif; /* (초등학생: 글씨체를 넥슨 폰트로 바꿔요) */
+            margin: 0; /* (초등학생: 바깥쪽 빈칸을 없애요) */
+            padding: 0; /* (초등학생: 안쪽 빈칸도 없애요) */
+            background: #f8f9fa; /* (초등학생: 배경색을 밝게 해요) */
         }
         .container {
-            max-width: 900px; /* 최대 너비 설정 */
-            margin: 0 auto; /* 가운데 정렬 */
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border-radius: 16px;
+            max-width: 900px; /* (초등학생: 너무 넓어지지 않게 해요) */
+            margin: 0 auto; /* (초등학생: 가운데로 모아요) */
+            padding: 20px; /* (초등학생: 안쪽에 여유를 줘요) */
+            background: #fff; /* (초등학생: 하얀색 상자예요) */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* (초등학생: 상자에 그림자를 넣어 입체감이 생겨요) */
+            border-radius: 16px; /* (초등학생: 상자 모서리를 둥글게 해요) */
         }
         .shop-image {
-            width: 100%; /* 대표 이미지는 컨테이너 전체 너비 */
-            border-radius: 12px;
-            margin-bottom: 32px;
-            object-fit: cover;
-            aspect-ratio: 16/7; /* 비율 유지 */
+            width: 100%; /* (초등학생: 사진이 상자 전체에 꽉 차요) */
+            border-radius: 12px; /* (초등학생: 사진 모서리도 둥글게 해요) */
+            margin-bottom: 32px; /* (초등학생: 사진 아래에 공간을 줘요) */
+            object-fit: cover; /* (초등학생: 사진이 찌그러지지 않게 해줘요) */
+            aspect-ratio: 16/7; /* (초등학생: 사진의 가로세로 비율을 맞춰요) */
         }
         .products-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px 24px;
-            margin-bottom: 40px;
+            display: grid; /* (초등학생: 네모칸으로 나눠서 정렬해요) */
+            grid-template-columns: 1fr 1fr; /* (초등학생: 두 칸씩 두 줄로 보여요) */
+            gap: 28px 24px; /* (초등학생: 상품들 사이에 공간을 줘요) */
+            margin-bottom: 40px; /* (초등학생: 아래쪽에 공간을 더 줘요) */
         }
         .product {
-            background: #f3f6fa;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 18px 14px 20px 14px;
-            box-sizing: border-box;
-            min-width: 0;
+            background: #ffffff; /* (초등학생: 상품 카드 배경을 연하게 해요) */
+            border-radius: 12px; /* (초등학생: 카드 모서리를 둥글게 해요) */
+            display: flex; /* (초등학생: 안에 있는 것들을 세로로 쌓아요) */
+            flex-direction: column; /* (초등학생: 위에서 아래로 쌓아요) */
+            align-items: center; /* (초등학생: 가운데로 모아요) */
+            padding: 18px 14px 20px 14px; /* (초등학생: 카드 안에 여유 공간을 줘요) */
+            box-sizing: border-box; /* (초등학생: 크기를 계산할 때 테두리도 포함해요) */
+            min-width: 0; /* (초등학생: 너무 작아지지 않게 해요) */
+            margin-left: 3px; /* (초등학생: 상품끼리 너무 붙지 않게 왼쪽에 공간을 줘요) */
+            margin-right: 3px; /* (초등학생: 상품끼리 너무 붙지 않게 오른쪽에 공간을 줘요) */
         }
         .product-image {
-            width: 100%; /* 카드 안에서 가득 차게 만듭니다 */
-            max-width: 240px; /* 최대 너비를 240px로 제한합니다 */
-            aspect-ratio: 1/0.7; /* 가로와 세로가 항상 같게(정사각형) 만듭니다 */
-            border-radius: 10px;
-            object-fit: cover; /* 이미지를 정사각형 영역에 꽉 채웁니다 */
-            margin-bottom: 16px;
+            width: 100%; /* (초등학생: 사진이 카드 안에 꽉 차요) */
+            max-width: 360px; /* (초등학생: 사진이 너무 커지지 않게 해요) */
+            aspect-ratio: 1/0.7; /* (초등학생: 사진의 가로세로 비율을 맞춰요) */
+            border-radius: 10px; /* (초등학생: 사진 모서리를 둥글게 해요) */
+            object-fit: cover; /* (초등학생: 사진이 찌그러지지 않게 해줘요) */
+            margin-bottom: 16px; /* (초등학생: 사진 아래에 공간을 줘요) */
         }
         .product-desc {
-            width: 100%;
-            font-size: 1.05rem;
-            text-align: center;
+            width: calc(100% - 90px); /* (초등학생: 설명이 이미지 넓이에 맞춰요) */
+            font-size: 1rem; /* (초등학생: 글씨 크기를 살짝 키워요) */
+            text-align: center; /* (초등학생: 글씨를 가운데로 맞춰요) */
+            margin: 0 auto; /* (초등학생: 설명을 가운데로 맞춰요) */
         }
         .buy-btn {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 16px;
+            display: flex; /* (초등학생: 버튼을 오른쪽에 놓으려고 해요) */
+            justify-content: flex-end; /* (초등학생: 버튼이 오른쪽에 있어요) */
+            margin-top: 16px; /* (초등학생: 위에 공간을 줘요) */
         }
         .buy-btn a {
-            background: #fbfcfb;
-            color: #050505;
-            font-weight: normal;
-            padding: 10px 25px;
-            border-radius: 20%;
-            text-decoration: none;
-            font-size: 1.0rem;
-            transition: background 0.2s;
-            box-shadow: 0 2px 8px rgba(3,199,90,0.08);
-            border: 1px solid #000;
+            background: #fbfcfb; /* (초등학생: 버튼 배경을 밝게 해요) */
+            color: #050505; /* (초등학생: 글씨를 검은색으로 해요) */
+            font-weight: normal; /* (초등학생: 글씨를 보통 굵기로 해요) */
+            padding: 10px 25px; /* (초등학생: 버튼 안에 공간을 줘요) */
+            border-radius: 12%; /* (초등학생: 버튼을 동글동글하게 해요) */
+            text-decoration: none; /* (초등학생: 밑줄을 없애요) */
+            font-size: 1.0rem; /* (초등학생: 글씨 크기를 정해요) */
+            transition: background 0.2s; /* (초등학생: 마우스를 올리면 색이 부드럽게 바뀌어요) */
+            box-shadow: 0 2px 8px rgba(3,199,90,0.08); /* (초등학생: 버튼에 그림자를 넣어요) */
+            border: 1px solid #000; /* (초등학생: 버튼에 테두리를 넣어요) */
         }
         .buy-btn a:hover {
-            background: #adb0ae;
+            background: #adb0ae; /* (초등학생: 마우스를 올리면 버튼 색이 바뀌어요) */
         }
-        @media (max-width: 700px) {
+        @media (max-width: 700px) { /* (초등학생: 화면이 작아지면 아래처럼 바뀌어요) */
             .products-grid {
-                grid-template-columns: 1fr;
-                gap: 18px;
+                grid-template-columns: 1fr; /* (초등학생: 한 줄로 보여요) */
+                gap: 18px; /* (초등학생: 상품 사이 공간이 조금 줄어요) */
             }
             .buy-btn {
-                justify-content: center;
+                justify-content: center; /* (초등학생: 버튼이 가운데로 와요) */
             }
         }
-    </style>
+    </style> <!-- (초등학생: 디자인 정하기 끝!) -->
 </head>
-<body>
-    <!-- 전체를 감싸는 컨테이너입니다. -->
-    <div class="container">
-        <!-- 매장의 대표 이미지를 보여줍니다. -->
-        <img src="images/shop1.jpg" alt="매장 대표 이미지" class="shop-image">
+<body> <!-- (초등학생: 여기부터 화면에 보이는 부분이에요) -->
+    <!-- 전체를 감싸는 컨테이너입니다. (초등학생: 모든 내용이 이 상자 안에 들어가요) -->
+    <div class="container"> <!-- (초등학생: 이 상자 안에 모든 내용이 들어가요) -->
+        <!-- 매장의 대표 이미지를 보여줍니다. (초등학생: 가게의 대표 사진이에요) -->
+        <img src="images/shop1.jpg" alt="매장 대표 이미지" class="shop-image"> <!-- (초등학생: 가게 사진을 보여줘요) -->
 
-        <h2 style="margin: 40px 0; text-align: center;">중간계 AI 스튜디오 4가지 상품</h2>
+        <h2 style="margin: 40px 0; text-align: center;">중간계 AI 스튜디오 4가지 상품</h2> <!-- (초등학생: 상품 제목이에요) -->
 
-
-        
-        <!-- 4개의 제품(이미지+설명) 영역을 2x2 그리드로 배치합니다. -->
-        <div class="products-grid">
-            <!-- 제품 1: 상세페이지 -->
-            <div class="product">
-                <!-- 제품 이미지를 보여줍니다. -->
-                <img src="images/pd1.jpg" alt="상세페이지 이미지" class="product-image">
-                <!-- 제품 설명입니다. -->
-                <div class="product-desc">
-                    <!-- 초등학생도 이해할 수 있도록 주석을 달았습니다. -->
-                    <strong>AI 상세페이지</strong><br>
-                    AI가 자동으로 상품을 분석해,<br>
-                    검색에 잘 노출되고 추천에 유리한<br>
-                    상세페이지를 쉽고 빠르게 만듭니다.<br>
-                    고객, 약속, 근거, 제품 특징,<br>
-                    구매의 혜택을 전달합니다.
+        <!-- 4개의 제품(이미지+설명) 영역을 2x2 그리드로 배치합니다. (초등학생: 상품이 네모칸에 2개씩 2줄로 나와요) -->
+        <div class="products-grid"> <!-- (초등학생: 상품들이 네모칸에 정렬돼요) -->
+            <!-- 제품 1: 상세페이지 (초등학생: 첫 번째 상품이에요) -->
+            <div class="product"> <!-- (초등학생: 첫 번째 상품 카드예요) -->
+                <!-- 제품 이미지를 보여줍니다. (초등학생: 상품 사진이에요) -->
+                <img src="images/pd1.jpg" alt="상세페이지 이미지" class="product-image"> <!-- (초등학생: 상품 사진을 보여줘요) -->
+                <!-- 제품 설명입니다. (초등학생: 상품이 어떤 건지 쉽게 설명해줘요) -->
+                <div class="product-desc"> <!-- (초등학생: 상품 설명이 들어가요) -->
+                    <strong>AI 상세페이지</strong><br> <!-- (초등학생: 상품 이름이에요) -->
+                    AI가 자동으로 상품을 분석해서,<br> <!-- (초등학생: AI가 상품을 똑똑하게 살펴봐요) -->
+                    검색에 잘 뜨고 추천에 유리한<br> <!-- (초등학생: 사람들이 쉽게 찾을 수 있어요) -->
+                    상세페이지를 쉽고 빠르게 만들어요.<br> <!-- (초등학생: 설명 페이지를 금방 만들 수 있어요) -->
+                    <span style="color:#888; font-size:0.98em;"></span><br> <!-- (초등학생: 쉽게 설명해줘요) -->
+                    고객, 약속, 근거, 제품 특징, 구매의 혜택까지 한눈에 보여줍니다. <!-- (초등학생: 중요한 정보가 다 들어있어요) -->
                 </div>
             </div>
-            <!-- 제품 2: 쇼츠, 릴스 -->
-            <div class="product">
-                <img src="images/pd2.jpg" alt="쇼츠 릴스 이미지" class="product-image">
-                <div class="product-desc">
-                    <strong>AI 쇼츠/릴스</strong><br>
-                    30초, 60초 영상도 AI가 척척!<br>
-                    주목도 높은 쇼츠와 릴스를<br>
-                    빠르게 제작해 SNS에서<br>
-                    인기 있는 영상을 쉽게 만듭니다.
+            <!-- 제품 2: 쇼츠, 릴스 (초등학생: 두 번째 상품이에요) -->
+            <div class="product"> <!-- (초등학생: 두 번째 상품 카드예요) -->
+                <img src="images/pd2.jpg" alt="쇼츠 릴스 이미지" class="product-image"> <!-- (초등학생: 상품 사진을 보여줘요) -->
+                <div class="product-desc"> <!-- (초등학생: 상품 설명이 들어가요) -->
+                    <strong>AI 쇼츠/릴스</strong><br> <!-- (초등학생: 상품 이름이에요) -->
+                    30초, 60초 영상도 AI가 척척 만들어요!<br> <!-- (초등학생: AI가 짧은 동영상을 금방 만들어요) -->
+                    주목도 높은 쇼츠와 릴스를<br> <!-- (초등학생: 사람들이 많이 보는 영상을 만들 수 있어요) -->
+                    빠르게 제작해서 SNS에서<br> <!-- (초등학생: SNS에 올릴 수 있어요) -->
+                    인기 있는 영상을 쉽게 만들 수 있어요.<br> <!-- (초등학생: 인기 영상도 쉽게 만들어요) -->
+                    <span style="color:#888; font-size:0.98em;"></span> <!-- (초등학생: 쉽게 동영상을 만들 수 있어요) -->
                 </div>
             </div>
-            <!-- 제품 3: 홈페이지 -->
-            <div class="product">
-                <img src="images/pd3.jpg" alt="홈페이지 이미지" class="product-image">
-                <div class="product-desc">
-                    <strong>AI 홈페이지</strong><br>
-                    AI가 검색에 잘 뜨는 홈페이지를<br>
-                    만들어주고, 브랜드에 맞는<br>
-                    디자인도 자동으로 추천해줍니다.<br>
-                    인공지능 최적화 홈페이지를<br>
-                    간결하게 만듭니다.
+            <!-- 제품 3: 홈페이지 (초등학생: 세 번째 상품이에요) -->
+            <div class="product"> <!-- (초등학생: 세 번째 상품 카드예요) -->
+                <img src="images/pd3.jpg" alt="홈페이지 이미지" class="product-image"> <!-- (초등학생: 상품 사진을 보여줘요) -->
+                <div class="product-desc"> <!-- (초등학생: 상품 설명이 들어가요) -->
+                    <strong>AI 홈페이지</strong><br> <!-- (초등학생: 상품 이름이에요) -->
+                    AI가 검색에 잘 뜨는 홈페이지를<br> <!-- (초등학생: 사람들이 쉽게 찾을 수 있는 홈페이지를 만들어요) -->
+                    만들어주고, 브랜드에 맞는<br> <!-- (초등학생: 우리 가게에 어울리게 만들어줘요) -->
+                    디자인도 자동으로 추천해줘요.<br> <!-- (초등학생: 멋진 디자인도 골라줘요) -->
+                    인공지능 최적화 홈페이지를<br> <!-- (초등학생: AI가 똑똑하게 만들어줘요) -->
+                    간결하게 만들 수 있어요.<br> <!-- (초등학생: 복잡하지 않고 쉽게 만들 수 있어요) -->
+                    <span style="color:#888; font-size:0.98em;"></span> <!-- (초등학생: 쉽게 홈페이지를 만들 수 있어요) -->
                 </div>
             </div>
-            <!-- 제품 4: AI 챗봇 -->
-            <div class="product">
-                <img src="images/pd4.jpg" alt="AI 챗봇 이미지" class="product-image">
-                <div class="product-desc">
-                    <strong>AI 챗봇</strong><br>
-                    AI가 고객 질문에 똑똑하게 답변!<br>
-                    브랜드 맞춤형 챗봇으로<br>
-                    최고의 고객 경험을<br>
-                    제공합니다.
+            <!-- 제품 4: AI 챗봇 (초등학생: 네 번째 상품이에요) -->
+            <div class="product"> <!-- (초등학생: 네 번째 상품 카드예요) -->
+                <img src="images/pd4.jpg" alt="AI 챗봇 이미지" class="product-image"> <!-- (초등학생: 상품 사진을 보여줘요) -->
+                <div class="product-desc"> <!-- (초등학생: 상품 설명이 들어가요) -->
+                    <strong>AI 챗봇</strong><br> <!-- (초등학생: 상품 이름이에요) -->
+                    AI가 고객 질문에 똑똑하게 답변해요!<br> <!-- (초등학생: 궁금한 걸 물어보면 AI가 바로 알려줘요) -->
+                    브랜드 맞춤형 챗봇으로<br> <!-- (초등학생: 우리 가게에 딱 맞는 챗봇이에요) -->
+                    최고의 고객 경험을<br> <!-- (초등학생: 손님들이 기분 좋게 이용할 수 있어요) -->
+                    제공합니다.<br> <!-- (초등학생: 좋은 서비스를 받을 수 있어요) -->
+                    <span style="color:#888; font-size:0.98em;"></span> <!-- (초등학생: 궁금한 걸 쉽게 알 수 있어요) -->
                 </div>
             </div>
         </div>
-        <!-- 구매하기 버튼 영역입니다. -->
-        <div class="buy-btn">
-            <!-- 버튼을 누르면 네이버 스마트스토어로 이동합니다. -->
-            <a href="https://smartstore.naver.com/" target="_blank">구매하기</a>
+        <!-- 구매하기 버튼 영역입니다. (초등학생: 상품을 사고 싶으면 이 버튼을 눌러요) -->
+        <div class="buy-btn"> <!-- (초등학생: 상품을 사는 버튼이 있어요) -->
+            <!-- 버튼을 누르면 네이버 스마트스토어로 이동합니다. (초등학생: 버튼을 누르면 네이버 가게로 가요) -->
+            <a href="https://smartstore.naver.com/" target="_blank">구매하기</a> <!-- (초등학생: 이 버튼을 누르면 상품을 살 수 있어요) -->
         </div>
     </div>
-</body>
-</html>
+</body> <!-- (초등학생: 여기까지가 화면에 보이는 부분이에요) -->
+</html> <!-- (초등학생: 여기서 웹페이지가 끝나요) -->

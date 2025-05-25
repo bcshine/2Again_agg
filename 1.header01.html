@@ -125,15 +125,21 @@
         <span class="brand">중간계AI 스튜디오</span> <!-- 로고 옆에 브랜드 이름을 써요 -->
       </div>
       <!-- 가운데: 메뉴들 -->
-      <nav class="nav">
+      <nav class="nav" id="nav">
         <a href="#product">제품</a> <!-- 제품 메뉴 -->
         <a href="#brand">브랜드</a> <!-- 브랜드 메뉴 -->
         <a href="#review">고객후기</a> <!-- 고객후기 메뉴 -->
         <a href="#philosophy">기업철학</a> <!-- 기업철학 메뉴 -->
         <a href="#greeting">인사말</a> <!-- 인사말 메뉴 -->
       </nav>
-      <!-- 오른쪽: 로그인 버튼 -->
+      <!-- 오른쪽: 로그인 버튼과 햄버거 메뉴 -->
       <button class="login-btn" id="loginBtn">로그인</button>
+      <!-- 햄버거 메뉴 버튼 (모바일에서만 보임) -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
 
@@ -141,6 +147,26 @@
     // 아래는 자바스크립트 예시 코드에요! (로그인 버튼을 누르면 알림창이 떠요)
     document.getElementById('loginBtn').addEventListener('click', function() {
       alert('로그인 버튼을 눌렀어요!'); // 알림창이 떠요
+    });
+    
+    // 햄버거 메뉴 토글 기능
+    document.getElementById('hamburger').addEventListener('click', function() {
+      const nav = document.getElementById('nav');
+      const hamburger = document.getElementById('hamburger');
+      
+      nav.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+    
+    // 메뉴 링크를 클릭하면 메뉴가 닫힘
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', function() {
+        const nav = document.getElementById('nav');
+        const hamburger = document.getElementById('hamburger');
+        
+        nav.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
     });
   </script>
 </body>
