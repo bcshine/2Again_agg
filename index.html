@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>중간계AI 스튜디오</title>
+  <!-- 폰트, CSS 등 공통 리소스는 여기에 한 번만! -->
+  <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/NEXONLv1Gothic.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 1.header01.html 스타일 */
+    body {
+      margin: 0;
+      font-family: 'NEXON Lv1 Gothic OTF', 'NEXON Lv1 Gothic', 'NEXON Lv2 Gothic', sans-serif;
+      background: #fff;
+    }
+    .header {
+      width: 100%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      border-bottom: 1px solid #eee;
+      padding: 0 16px;
+    }
+    .header-inner {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 0;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+    .brand {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #222;
+      letter-spacing: -1px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 0;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #222;
+      font-size: 1rem;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .nav a:hover {
+      background: #f5f5f5;
+    }
+    .login-btn {
+      background: #fff;
+      color: #222;
+      border: 1.5px solid #222;
+      border-radius: 30px;
+      padding: 7px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .login-btn:hover {
+      background: #222;
+      color: #fff;
+    }
+    @media (max-width: 900px) {
+      .header-inner { flex-direction: column; align-items: stretch; gap: 10px; }
+      .header-left { justify-content: center; margin-bottom: 8px; }
+      .nav { justify-content: center; margin-left: 0; }
+      .login-btn { align-self: flex-end; }
+    }
+    @media (max-width: 480px) {
+      .brand { font-size: 1rem; }
+      .nav a { font-size: 0.95rem; padding: 5px 7px; }
+      .header-inner { padding: 8px 0; }
+      .logo { height: 32px; }
+    }
+
+    /* 2.hero.html 스타일 */
+    .hero {
+      width: 100vw;
+      height: 600px;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .carousel {
+      position: relative;
+      width: 100vw;
+      height: 100%;
+      overflow: hidden;
+    }
+    .carousel-slide {
+      width: 100vw;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.7s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    .carousel-slide img {
+      width: 100vw;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .slide-content h1 { font-size: 2.5rem; margin: 0 0 12px 0; font-weight: bold; }
+    .slide-content h2 { font-size: 1.4rem; margin: 0 0 10px 0; font-weight: 500; }
+    .slide-content p { font-size: 1.1rem; margin: 0 0 20px 0; }
+    .reserve-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 36px;
+      font-size: 1.1rem;
+      font-family: 'NEXON Lv1 Gothic', sans-serif;
+      font-weight: bold;
+      color: #fff;
+      background: #103c8f;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .reserve-btn:hover { background: #2c2424; }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background: none;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 2.2rem;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: none;
+      transition: background 0.2s;
+    }
+    .arrow.left { left: 16px; }
+    .arrow.right { right: 16px; }
+    .arrow:hover { background: rgba(255,255,255,0.12); }
+    @media (max-width: 600px) {
+      .hero { height: 260px; }
+      .carousel, .carousel-slide, .carousel-slide img { height: 100%; }
+      .slide-content h1 { font-size: 1.2rem; }
+      .slide-content h2 { font-size: 0.95rem; }
+      .slide-content p { font-size: 0.8rem; }
+      .reserve-btn { font-size: 0.9rem; padding: 8px 18px; }
+      .arrow { width: 32px; height: 32px; font-size: 1.3rem; }
+    }
+
+    /* 3.product.html 스타일 */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 16px;
+    }
+    .shop-image {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 32px;
+      object-fit: cover;
+      aspect-ratio: 16/7;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 24px;
+      margin-bottom: 40px;
+    }
+    .product {
+      background: #f3f6fa;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 18px 14px 20px 14px;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+    .product-image {
+      width: 100%;
+      max-width: 240px;
+      aspect-ratio: 1/0.7;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
+    .product-desc {
+      width: 100%;
+      font-size: 1.05rem;
+      text-align: center;
+    }
+    .buy-btn {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+    }
+    .buy-btn a {
+      background: #fbfcfb;
+      color: #050505;
+      font-weight: normal;
+      padding: 10px 25px;
+      border-radius: 20%;
+      text-decoration: none;
+      font-size: 1.0rem;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(3,199,90,0.08);
+      border: 1px solid #000;
+    }
+    .buy-btn a:hover { background: #adb0ae; }
+    @media (max-width: 700px) {
+      .products-grid { grid-template-columns: 1fr; gap: 18px; }
+      .buy-btn { justify-content: center; }
+    }
+
+    /* 4.review.html 스타일 */
+    @font-face {
+      font-family: 'NEXON Lv2 Gothic';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON%20Lv2%20Gothic.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .review-box {
+      background: #f0f4fa;
+      border-radius: 16px;
+      padding: 20px 16px 16px 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 180px;
+    }
+    .stars {
+      color: #ffd600;
+      font-size: 1.2em;
+      margin-bottom: 8px;
+    }
+    .review-text {
+      color: #222;
+      font-size: 1em;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .review-author {
+      color: #4a6fa1;
+      font-size: 0.95em;
+      font-weight: bold;
+      margin-top: auto;
+    }
+    @media (max-width: 900px) {
+      .container { width: 95vw; }
+      .review-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .container { width: 100vw; border-radius: 0; padding: 8px; }
+      .review-grid { grid-template-columns: 1fr; }
+    }
+
+    /* 5.brand_about.html 스타일 */
+    .section-content {
+      max-height: 200px;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      position: relative;
+    }
+    .section-content.expanded { max-height: 2000px; }
+    .more-btn {
+      display: block;
+      margin: 12px 20px 20px auto;
+      background: #ffffff;
+      color: #000000;
+      border: 1.5px solid #000000;
+      border-radius: 10px;
+      padding: 8px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .more-btn:hover { background: #ddddde; }
+    h2 {
+      margin-top: 0;
+      color: #1a237e;
+      font-size: 1.6rem;
+    }
+    h3 {
+      color: #1976d2;
+      font-size: 1.1rem;
+      margin-bottom: 1.7em;
+    }
+    p {
+      color: #222;
+      line-height: 1.7;
+      margin: 0.5em 0;
+    }
+    .ceo-img {
+      width: 300px;
+      height: 300px;
+      border-radius: 10%;
+      object-fit: cover;
+      margin-bottom: 12px;
+      float: left;
+      margin-right: 20px;
+      height: 100%;
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+    #ceo-content p { margin-top: 0; margin-right: 60px; }
+    @media (max-width: 600px) {
+      .container { width: 96vw; padding: 16px 6vw; }
+      .ceo-img { width: 60px; height: 60px; }
+    }
+    .comment {
+      display: block;
+      font-size: 0.95em;
+      color: #888;
+      margin-bottom: 8px;
+      background: #f0f4ff;
+      border-left: 4px solid #1976d2;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+  <div id="hero"></div>
+  <div id="product"></div>
+  <div id="review"></div>
+  <div id="brand"></div>
+  <div id="footer"></div>
+
+  <script>
+    // 각 섹션을 동적으로 불러오기
+    function loadHTML(id, file) {
+      fetch(file)
+        .then(res => res.text())
+        .then(data => {
+          // body 태그 안의 내용만 추출
+          const bodyContent = data.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+          document.getElementById(id).innerHTML = bodyContent ? bodyContent[1] : data;
+          // 만약 해당 파일에 <script>가 있다면 실행
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = bodyContent ? bodyContent[1] : data;
+          tempDiv.querySelectorAll('script').forEach(oldScript => {
+            const newScript = document.createElement('script');
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+          });
+        });
+    }
+    loadHTML('header', '1.header01.html');
+    loadHTML('hero', '2.hero.html');
+    loadHTML('product', '3.product.html');
+    loadHTML('review', '4.review.html');
+    loadHTML('brand', '5.brand_about.html');
+    loadHTML('footer', '6.footer.html');
+  </script>
+</body>
+</html>
